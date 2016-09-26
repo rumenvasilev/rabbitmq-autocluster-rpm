@@ -39,10 +39,10 @@ Build the RPM as a non-root user from your home directory:
     rpmdev-setuptree
     ```
 
-* Link the spec file and sources.
+* Link the spec file and create sources dir.
     ```
     ln -s $HOME/rabbitmq-autocluster-rpm/SPECS/rabbitmq-autocluster.spec $HOME/rpmbuild/SPECS/
-    find $HOME/rabbitmq-autocluster-rpm/SOURCES -type f -exec ln -s {} $HOME/rpmbuild/SOURCES/ \;
+    mkdir $HOME/rpmbuild/SOURCES/
     ```
 
 * Download remote source files.
