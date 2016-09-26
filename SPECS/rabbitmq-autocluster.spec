@@ -15,7 +15,9 @@ Source0:        https://github.com/aweber/%{name}/releases/download/%{version}/a
 BuildRoot:      %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 Requires:       rabbitmq-server >= 3.5, erlang >= 17.5
 
+%define					debug_package     %{nil}
 %define					__pluginsdir      /usr/lib/rabbitmq/lib/%{name}/
+
 %description
 A RabbitMQ plugin that clusters nodes automatically using Consul, etcd2, DNS, or natively in AWS
 
