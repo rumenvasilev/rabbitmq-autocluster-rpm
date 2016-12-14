@@ -36,6 +36,7 @@ version=`rpm -q rabbitmq-server --info | grep Version | awk '{print $3}'`
 plugin_path=`rpm -ql rabbitmq-server | grep $version/plugins/README$ | sed 's/README//'`
 ln %{__pluginsdir}/*.ez $plugin_path/
 rabbitmq-plugins enable autocluster
+service rabbitmq-server restart
 
 %preun
 rabbitmq-plugins disable autocluster
